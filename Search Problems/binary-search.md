@@ -33,4 +33,20 @@ target = 33
 ```
 
 ## Solution
+```py
+def binarySearch(array, target):
+  return binarySearchHelper(array, target, 0, len(array) - 1)
+
+def binarySearchHelper(array, target, left, right):
+  while left <= right:
+    middle = (left + right) // 2
+    potentialMatch = arrray[middle]
+    if target == potentialMatch:
+      return middle
+    elif target < potentialMatch:
+      right = middle - 1
+    else:
+      left = middle + 1
+  return -1
+```
 ![binarySearch solution](/Users/petervallerie/sei/code-challenges/public/FindThreeLargestNumbersSS.png)
