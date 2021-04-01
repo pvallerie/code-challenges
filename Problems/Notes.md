@@ -50,7 +50,32 @@ Definition: FIFO, first in first out
 - use: used to implement priority queues
 
 ## Hash Table
+Definition: data structure that stores values in key/value pairs (think of a relational database)
+
+- direct addressing - 1 key per value, can get inefficient
+  - use hash tables to address this issue
+- hash functions - map a data set of any size to a fixed size
+- collision - when 2 keys are hashed to same index in hash table
+  - problem because each slot in hash table supposed to store a single element
+  - solutions:
+    - chaining - make hash table an array of linked lists (each index has its own linked list)
+- applications: databases, associative arrays, set data structure
 
 ## Tree
+Definition: data structure where data is organized heirarchically and are linked together (similar to linked list, but LLs are linear, whereas trees are heirarchical)
+
+types: binear search, B tree, treap, read-black, splay, AVL, n-ary
+
+- binary search tree:
+  - stores data in a sorted order
+  - 4 attributes: key, right, left, p (parent pointer)
+  - every node on right subtree needs to be larger than current node, every node on the left subtree needs to be smaller
+  - used when data is constantly entering and leaving
 
 ## Graph
+Definition: finite set of vertices or nodes and a set of edges connecting those vertices
+
+- order: number of vertices
+- size: number of edges
+- types: directed, undirected
+- example: social network, GPS
