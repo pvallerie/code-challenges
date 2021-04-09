@@ -5,23 +5,22 @@ It is guaranteed that the node to be deleted is not a tail node in the list.
 
 ## Attempt
 ```py
-class Solution:
-    def deleteNode(self, node):
+def deleteNode(self, node):
         """
         :type node: ListNode
         :rtype: void Do not return anything, modify node in-place instead.
         """
-#         iterate through self(linked list)
-        for i in range(len(self) - 1):
-#             find the node whose tail is node to be deleted
-            if self[i].next == node:
-#                 change tail of current node to the tail of the next node's tail
-                self[i].next = self[i + 1].next
+#         change `node.val` to the val of the next node
+        node.val = node.next.val
+#         change `node.next` to be the next of the next node
+        node.next = node.next.next
 ```
 
 ## Solution
 ```py
 def deleteNode(self, node):
+    # change `node.val` to the val of the next node
     node.val = node.next.val
+    # change `node.next` to be the next of the next node
     node.next = node.next.next
 ```

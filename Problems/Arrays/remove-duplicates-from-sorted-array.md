@@ -5,22 +5,16 @@ Do not allocate extra space for another array, you must do this by modifying the
 
 ## Attempt
 ```py
-class Solution:
-    def removeDuplicates(self, nums: List[int]) -> int:
-#         output accumulator
-        output = []
-
-#         iterate through nums array
-        for num in nums:
-#           iterate through output array
-            for uniqueNum in output:
-#               check if current num exists in output array
-                if num == uniqueNum:
-                    continue
-                output.append(num)
-
-#       return length of output
-        return len(output)
+def removeDuplicates(self, nums: List[int]) -> int:
+#         iterate backwards through nums list
+        for i in range(len(nums)-1, 0, -1):
+        
+#             check if current value is same as value to the left
+            if nums[i] == nums[i-1]:
+#                     if it is, remove it
+                    nums.pop(i)
+                
+        return len(nums)
 ```
 
 ## Solution
