@@ -27,17 +27,9 @@ def maxDepth(self, root: TreeNode) -> int:
 ```py
 def maxDepth(root):
   # Null node has 0 depth.
-  if root == None:
+  if not root:
     return 0
 
-  # Get the depth of the left and right subtree
-  # using recursion.
-  leftDepth = maxDepth(root.left)
-  rightDepth = maxDepth(root.right)
-
-  # Choose the larger one and add the root to it.
-  if leftDepth > rightDepth:
-    return leftDepth + 1
-  else:
-    return rightDepth + 1
+  # recursively check left and right nodes, compare, and add one to the larger to account for the root
+  return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
 ```
