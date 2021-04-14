@@ -7,15 +7,23 @@ class Solution:
         """
         Do not return anything, modify nums1 in-place instead.
         """
-        insert_index = m
-#       iterate through nums2
-        for i in range(len(nums2)):
-#             insert current num into nums1 at insert_index
-            nums1[insert_index] = nums2[i]
-#             increment insert_index
-            insert_index += 1
+        pointer1 = 0
+        pointer2 = 0
+        
+#         while nums1[pointer1] or nums2[pointer2] are None
+        while pointer1 < m and pointer2 < n:
+    
+    #         if pointer2 >= pointer1
+            if nums2[pointer2] <= nums1[pointer1]:
+    #             insert pointer2 before pointer1
+                nums1.insert(pointer1 - 1, nums2[pointer2])
+    #             move pointer2 to next value
+                pointer2 += 1
 
-        nums1.sort()
+    #         else
+            else:
+    #             move pointer1 to next value
+                pointer1 += 1
 ```
 
 ## Solution
