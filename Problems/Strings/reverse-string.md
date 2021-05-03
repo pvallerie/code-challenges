@@ -37,7 +37,7 @@ const string = 'pete'
 reverseString(string)
 
 
-// reverse iteration
+// for loop
 const reverseString = string => {
     newString = ''
 
@@ -50,6 +50,19 @@ const reverseString = string => {
 
 const string = 'pete'
 reverseString(string)
+
+
+// while loop (takes in array and modifies in place)
+var reverseString = function(s) {
+    let leftPointer = 0
+    let rightPointer = s.length - 1
+    
+    while (leftPointer < rightPointer) {
+        [s[leftPointer], s[rightPointer]] = [s[rightPointer], s[leftPointer]]
+        leftPointer++
+        rightPointer--
+    }
+};
 
 
 // recursion
