@@ -14,6 +14,7 @@ return 2.
 Note: You may assume the string contains only lowercase English letters.
 
 ## Attempt
+Python
 ```py
 class Solution:
     def firstUniqChar(self, s: str) -> int:
@@ -36,7 +37,40 @@ class Solution:
         return first_unique_index
 ```
 
+JavaScript
+```js
+const firstUniqChar = s => {
+    // map to tally chars
+    const letters = new Map
+    
+    // iterate over s
+    for (let ltr of s) {
+        // if ltr exists in map
+        if (letters.has(ltr)){
+            // tally up by 1
+            letters.set(ltr, letters.get(ltr) + 1)
+        } else {
+            // add new key/val pair
+            letters.set(ltr, 1)
+        }
+    }
+    
+    // iterate over map
+    for ([key, value] of letters) {
+        // if value is 1
+        if (value === 1) {
+            // return index of value in s
+            return s.indexOf(key)
+        }
+    }
+        
+    // if no unique ltrs exist, return -1
+    return -1
+};
+```
+
 ## Solution
+Python
 ```py
 class Solution:
     def firstUniqChar(self, s: str) -> int:
@@ -52,4 +86,23 @@ class Solution:
             if count[ch] == 1:
                 return idx
         return -1
+```
+
+JavaScript
+```js
+var firstUniqChar = s => {
+    // iterate over s
+   for(i=0;i<s.length;i++){
+
+        // if the first index of current letter is the same as the last index of current letter
+       if (s.indexOf(s[i])===s.lastIndexOf(s[i])){
+           
+        // return current index 
+          return i;
+      } 
+   }
+
+    // otherwise, return -1
+   return -1;
+};
 ```
