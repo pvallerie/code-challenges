@@ -15,6 +15,22 @@ class Solution:
 #             will have a solution of all 1s and a solution of all 2s
 ```
 
+```js
+var climbStairs = function(n) {
+//     hash table to store combos
+    const combos = {n: 1}
+    n--
+    
+    while (n > 0) {
+        combos[n] = combos[n] + 1
+        n--
+        console.log(combos)
+    }
+    
+    return combos[n]
+};
+```
+
 ## Solution
 ```py
 def climbStairs(self, n):
@@ -22,4 +38,18 @@ def climbStairs(self, n):
     for i in range(n):
         a, b = b, a + b
     return a
+```
+
+memoization
+```js
+let climbStairs = function(n) {
+    let arr={};
+    arr[1]=1;
+    arr[2]=2;
+    for(let i=3;i<=n;i++){
+        arr[i]=arr[i-1]+arr[i-2];
+    }
+    console.log(arr)
+    return arr[n];
+};
 ```

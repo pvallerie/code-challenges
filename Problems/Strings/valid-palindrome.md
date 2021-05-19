@@ -22,6 +22,14 @@ var isPalindrome = function(s) {
 };
 ```
 
+```js
+var isPalindrome = function(s) {
+    const forwards = s.replace(/[^0-9a-z]/gi, '').toLowerCase()
+    const backwards = forwards.split("").reverse().join("")
+    return forwards === backwards
+};
+```
+
 ## Solution
 ```js
 
