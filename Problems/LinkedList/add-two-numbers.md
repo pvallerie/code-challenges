@@ -6,6 +6,7 @@ You may assume the two numbers do not contain any leading zero, except the numbe
 ## Attempt
 ```js
 var addTwoNumbers = function(l1, l2) {
+    
     //  helper to convert linked list to an int
     const convertLinkedListToInt = list => {
         // list to store nums from list
@@ -41,7 +42,7 @@ var addTwoNumbers = function(l1, l2) {
     // add list numbers together and store in sum variable
     const sum = listOneNum + listTwoNum
     // convert sum to a string
-    const revSumStr = sum.toString()
+    const sumStr = sum.toString()
     
     // node class
     class Node {
@@ -79,11 +80,11 @@ var addTwoNumbers = function(l1, l2) {
     // create empty linked list from LinkedList constructor
     const outputList = new LinkedList()
     
-    // iterate backwards through revSumStr
-    for (let i = revSumStr.length - 1; i >= 0; i--) {
+    // iterate backwards through sumStr
+    for (let i = sumStr.length - 1; i >= 0; i--) {
         // create new node for current character in sum
         // add it to the end of our outputList         
-        outputList.addNode(parseInt(revSumStr[i]))
+        outputList.addNode(parseInt(sumStr[i]))
     }
     
     // return head of sum linked list
